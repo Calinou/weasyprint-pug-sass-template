@@ -1,0 +1,29 @@
+{
+  "name": "weasyprint-pug-sass-template",
+  "description": "Template to get started quickly with WeasyPrint + Pug + Sass",
+  "version": "0.1.0",
+  "license": "MIT",
+  "private": true,
+  "author": "Hugo Locurcio",
+  "repository": "Calinou/weasyprint-pug-sass-template",
+  "main": "index.js",
+  "devDependencies": {
+    "chokidar-cli": "^1.2.1",
+    "del-cli": "^1.1.0",
+    "make-dir-cli": "^1.0.0",
+    "node-sass": "^4.10.0",
+    "npm-run-all": "^4.1.5",
+    "pug-cli": "^1.0.0-alpha6"
+  },
+  "scripts": {
+    "clean": "del-cli build dist",
+    "dev": "run-p pug:watch sass:watch weasyprint:watch",
+    "prod": "run-p pug sass && yarn weasyprint",
+    "pug": "pug src/index.pug --out build",
+    "pug:watch": "chokidar -d 0 --initial 'src/**/*.pug' -c 'yarn pug'",
+    "sass": "node-sass src/style.sass --output-style compressed --output build",
+    "sass:watch": "chokidar -d 0 --initial 'src/**/*.sass' -c 'yarn sass'",
+    "weasyprint": "make-dir dist && weasyprint build/index.html dist/index.pdf",
+    "weasyprint:watch": "make-dir build && chokidar -d 0 --initial 'build/**/*' -c 'yarn weasyprint'"
+  }
+}
