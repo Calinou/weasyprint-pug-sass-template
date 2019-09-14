@@ -21,8 +21,8 @@
     "prod": "run-p pug sass && yarn weasyprint",
     "pug": "pug src/index.pug --out build",
     "pug:watch": "chokidar -d 0 --initial 'src/**/*.pug' -c 'yarn pug'",
-    "sass": "node-sass src/style.sass --output-style compressed --output build",
-    "sass:watch": "chokidar -d 0 --initial 'src/**/*.sass' -c 'yarn sass'",
+    "sass": "node-sass src/style.scss --output-style compressed --output build",
+    "sass:watch": "chokidar -d 0 --initial 'src/**/*.scss' -c 'yarn sass'",
     "weasyprint": "make-dir dist && weasyprint build/index.html dist/index.pdf",
     "weasyprint:watch": "make-dir build && chokidar -d 0 --initial 'build/**/*' -c 'yarn weasyprint'"
   }
