@@ -8,7 +8,7 @@
   "repository": "Calinou/weasyprint-pug-sass-template",
   "main": "index.js",
   "devDependencies": {
-    "chokidar-cli": "^2.0.0",
+    "chokidar-cli": "^2.1.0",
     "del-cli": "^3.0.0",
     "make-dir-cli": "^2.0.0",
     "node-sass": "^4.12.0",
